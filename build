@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+import os
+import zipfile
+from glob import glob
+
+# Create zip files for all top-level directories.
+
+paths = os.listdir('.')
+for path in paths:
+	if not os.path.isdir(path) or path.startswith('.'): continue
+
+	files = glob(os.path.join(os.getcwd(), path, '**/*'), recursive=True)
+
+	with zipfile.ZipFile(path + '.zip', 'w') as myzip:
+		for f in files:
+			# Get name relative to example directory.
+			name = f.split(path + os.sep)[1]
+			myzip.write(f, name, compress_type=zipfile.ZIP_DEFLATED)
