@@ -4,16 +4,24 @@ import os
 import zipfile
 from glob import glob
 
-# Create zip files for all top-level directories.
+if __name__ == '__main__':
 
-paths = os.listdir('.')
-for path in paths:
-	if not os.path.isdir(path) or path.startswith('.'): continue
+	# Create zip files for all top-level directories.
 
-	files = glob(os.path.join(os.getcwd(), path, '**/*'), recursive=True)
+	# Get working dir & create output dir if required.
+	cwd = os.getcwd()
+	output_dir = os.path.join(cwd, 'output')
+	if not os.path.isdir(output_dir): os.mkdir(output_dir)
 
-	with zipfile.ZipFile(path + '.zip', 'w') as myzip:
-		for f in files:
-			# Get name relative to example directory.
-			name = f.split(path + os.sep)[1]
-			myzip.write(f, name, compress_type=zipfile.ZIP_DEFLATED)
+	paths = os.listdir(cwd)
+	
+	for path in paths:
+		if not os.path.isdir(path) or path.startswith('.') or path == 'output': continue
+
+		files = glob(os.path.join(cwd, path, '**/*'), recursive=True)
+
+		with zipfile.ZipFile(os.path.join(output_dir, path + '.zip'), 'w') as myzip:
+			for f in files:
+				# Get name relative to example directory.
+				name = f.split(path + os.sep)[1]
+				myzip.write(f, name, compress_type=zipfile.ZIP_DEFLATED)
