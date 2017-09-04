@@ -10,11 +10,11 @@ if __name__ == '__main__':
 
 	# Get working dir & create output dir if required.
 	cwd = os.getcwd()
-	output_dir = os.path.join(cwd, 'output')
+	output_dir = os.path.join(cwd, 'publish')
 	if not os.path.isdir(output_dir): os.mkdir(output_dir)
 
 	paths = os.listdir(cwd)
-	
+
 	for path in paths:
 		if not os.path.isdir(path) or path.startswith('.') or path == 'output': continue
 
