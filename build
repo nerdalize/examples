@@ -20,8 +20,11 @@ if __name__ == '__main__':
 
 		files = glob(os.path.join(cwd, path, '**/*'), recursive=True)
 
-		with zipfile.ZipFile(os.path.join(output_dir, path + '.zip'), 'w') as myzip:
+		zip_path = os.path.join(output_dir, path + '.zip')
+		with zipfile.ZipFile(zip_path, 'w') as myzip:
 			for f in files:
 				# Get name relative to example directory.
 				name = f.split(path + os.sep)[1]
 				myzip.write(f, name, compress_type=zipfile.ZIP_DEFLATED)
+
+		print('Created %s' % zip_path)
