@@ -26,7 +26,7 @@ transport = Transport(co2_kg)
 print("For {} households, Nerdalize reduces CO2 emissions by {} tonnes per year.".format(households, co2_tonnes))
 print("")
 print("This is equivalent to (per person):")
-tmpl = "- {:,.0f} Kilometers by {}, equivalent to {:.1f} times around the 🌍"
+tmpl = "- {:,.0f} Kilometers by {}, or {:.1f} times around the 🌍"
 print(tmpl.format(transport.car(), "🚗", km_to_world(transport.car())))
 print(tmpl.format(transport.train(), "🚆", km_to_world(transport.train())))
 print(tmpl.format(transport.airplane(), "✈️ ", km_to_world(transport.airplane())))
