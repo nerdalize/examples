@@ -4,7 +4,7 @@ Nerdalize is building a different cloud. Rather than putting thousands of server
 
 This Python script calculates the amount of CO2 saved per year by Nerdalize. It takes an amount of households as input. The script outputs two things:
 1) Total CO2 savings in kilograms and how many traveling kilometers this corresponds to for different ways of transportation.
-2) An image showing how many airplane trips you could make for the different trips specified in `flights.csv`.
+2) A bar chart showing how many airplane trips you could make, based on the different trips specified in input file `flights.csv`.
 
 ## Usage
 
