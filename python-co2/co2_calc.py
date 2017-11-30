@@ -18,18 +18,17 @@ def km_to_world(km):
     return km / 40000
 
 households = int(sys.argv[1])
-co2_tonnes = households * 3
-co2_kg = co2_tonnes * 1000
+co2_kg = households * 3000
 transport = Transport(co2_kg)
 
 # Print traveling kilometers per transport type.
-print("For {} households, Nerdalize reduces CO2 emissions by {} tonnes per year.".format(households, co2_tonnes))
+print("For {} households, Nerdalize reduces CO2 emissions by {:,d} kg per year.".format(households, co2_kg))
 print("")
 print("This is equivalent to (per person):")
-tmpl = "- {:,.0f} Kilometers by {}, equivalent to {:.1f} times around the 🌍"
-print(tmpl.format(transport.car(), "🚗", km_to_world(transport.car())))
-print(tmpl.format(transport.train(), "🚆", km_to_world(transport.train())))
-print(tmpl.format(transport.airplane(), "✈️ ", km_to_world(transport.airplane())))
+tmpl = "{} {:,.0f} Kilometers by {}, or {:.1f} times around the world 🌍"
+print(tmpl.format("🚗", transport.car(), "car", km_to_world(transport.car())))
+print(tmpl.format("🚆", transport.train(), "train", km_to_world(transport.train())))
+print(tmpl.format("✈️ ", transport.airplane(), "airplane", km_to_world(transport.airplane())))
 
 # Read input file and plot amount of trips that could be made for amount of households.
 input_file = "flights.csv"

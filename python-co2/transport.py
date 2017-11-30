@@ -1,5 +1,5 @@
 class Transport:
-    """This class calculates the amount of kilometers per transport type for an amount of kilograms CO2."""
+    """This class calculates the amount of kilometers per transport type for an amount of CO2 (in kg)."""
     co2_kg = 0
 
     def __init__(self, co2_kg):
