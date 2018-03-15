@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git lfs pull --all
+git lfs pull
 python build
