@@ -1,4 +1,0 @@
-#!/bin/bash
-
-git lfs pull $REPOSITORY_URL
-python build
