@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git lfs fetch --all
+git lfs fetch origin --all
 python build
