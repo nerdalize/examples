@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git lfs fetch --all
+python build
