@@ -12,4 +12,5 @@ fi
 /opt/delft3dfm_latest/lnx64/scripts/run_dimr.sh
 
 # Move input files to /output (some diagnostic files are written to the input folder)
-cp -R /input /output/input_files
+mkdir -p /output/input_files
+cp -R /input/* /output/input_files
