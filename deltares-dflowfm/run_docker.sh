@@ -13,4 +13,4 @@ fi
 
 # Move input files to /output (some diagnostic files are written to the input folder)
 mkdir -p /output/input_files
-cp -R /input/* /output/input_files
+cp -R ./* /output/input_files
