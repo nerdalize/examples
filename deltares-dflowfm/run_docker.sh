@@ -9,7 +9,7 @@ OutputDir = /output' > .nlz_staging.mdu && mv .nlz_staging.mdu "$MDU_FILE"
 fi
 
 # Run D-Flow FM
-/opt/delft3dfm_latest/lnx64/scripts/run_dimr.sh
+/opt/delft3dfm_latest/lnx64/bin/run_dimr.sh
 
 # Move input files to /output (some diagnostic files are written to the input folder)
 mkdir -p /output/input_files
