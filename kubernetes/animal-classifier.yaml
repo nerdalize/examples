@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: tensorflow-example
+spec:
+  template:
+    spec:
+      containers:
+      - name: tf
+        image: nerdalize/tensorflow-example
+        env:
+        - name: SUBJECT
+          value: "https://www.worldatlas.com/r/w728-h425-c728x425/upload/44/03/55/shutterstock-73764937.jpg"
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+      restartPolicy: Never
+  backoffLimit: 4
