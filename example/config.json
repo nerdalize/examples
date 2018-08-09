@@ -1,0 +1,5 @@
+{
+    "netcdf" : {
+        "outputfile" : "xbeach/output.nc"
+    }
+}
