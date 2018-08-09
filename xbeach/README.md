@@ -1,5 +1,5 @@
 # XBeach Dataset
-This dataset is configured to work with the `quay.io/nerdalize/xbeach` image. If you want to find out how to run this image on the Nerdalize cloud, take a look at the [Delft3D Application Guide](https://www.nerdalize.com/applications/delft3d/).
+This dataset is configured to work with the `quay.io/nerdalize/xbeach` image. If you want to find out how to run this image on the Nerdalize cloud, take a look at the [XBeach Application Guide](http://oss.deltares.nl/web/xbeach).
 
 ## Understanding the dataset
 When the `quay.io/nerdalize/xbeach` container starts it will run the `run.sh` script, which can be modified however you like. Out-of-the-box it performs the following operations:
